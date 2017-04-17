@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="renderer" content="webkit">
+    <link rel="stylesheet" type="text/css" href="libs/chosen/chosen.min.css">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <!--[if IE 8]>
+        <script src="js/libs/es5-shim.min.js"></script>        
+    <![endif]-->
+    <title>首页</title>
+</head>
+
+<body>
+    <div class="header container" ng-controller="headControl">
+        <div ng-include="'include/header.inc.html'"></div>
+    </div>
+    <div ng-view></div>
+    <div class="footer">
+        <div ng-include="'include/footer.inc.html'"></div>
+    </div>
+    <script data-main="libs/index" src="libs/require.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,55 @@
+<div class="wb-slider" id="banner">
+    <div class="wb-slider-conbox">
+        <div class="wb-slider-ctag" style="background-image:url('images/banner01.jpg')">
+        </div>
+        <div class="wb-slider-ctag" style="background-image:url('images/banner01.jpg')">
+        </div>
+        <div class="wb-slider-ctag" style="background-image:url('images/banner01.jpg')">
+        </div>
+    </div>
+    <div class="wb-slider-switcher">
+        <div class="wb-slider-stag"></div>
+        <div class="wb-slider-stag"></div>
+        <div class="wb-slider-stag"></div>
+    </div>
+</div>
+<div class="main container">
+    <div class="big-title">
+        <h5><i class="blue"></i><span class="head-txt">优秀案例<em class="en">EXCELLENT  CASES</em></span><i class="blue"></i></h5>
+    </div>
+    <div class="content" id="tabview">
+        <div class="case-hd clearfix" data-role="head" id="tab-hd">
+            <a class="title l" data-role="tab" data-target="{{x.CategoryNum}}" ng-repeat="x in columnList">{{x.CategoryName}}</a>
+        </div>
+        <div class="case-bd" data-role="body" id="tab-bd">
+            <div class="content" data-role="tab-content" data-id="{{x.CategoryNum}}" ng-repeat="x in columnList" repeat-finish="tabview()">
+                <div class="ul-list">
+                    <ul class="clearfix">
+                        <li ng-repeat="x in detailList[$index]">
+                            <div class="img-div">
+                                <a target="_blank" href=""><img src="{{x.ListImgUrl}}" alt="加载图片失败" class="show-img"></a>
+                            </div>
+                            <div class="show-info">
+                                <p class="name" title="{{x.Title}}">{{x.Title}}</p>
+                                <p class="num" title="项目编号{{x.ProjectNum}}">项目编号{{x.ProjectNum}}</p>
+                                <div class="look">
+                                    <a ng-show="x.FormalWebUrl" target="_blank" href="{{x.FormalWebUrl}}" title="浏览上线网站" class="computer"></a>
+                                    <a ng-show="x.APPImgUrl" class="tel">
+                                        <div class="code">
+                                            <div class="img-div">
+                                                <img src="{{x.APPImgUrl}}" alt="图片加载中....">
+                                            </div>
+                                            <span>安装移动端产品</span>
+                                        </div>
+                                    </a>
+                                    <a ng-show="x.TestWebUrl" target="_blank" href="{{x.TestWebUrl}}" title="访问测试demo" class="file"></a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div ng-if="TotalList[$index]>3" class="more-show shrink">更多案例</div>
+            </div>
+        </div>
+    </div>
+</div>
